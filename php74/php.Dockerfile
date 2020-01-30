@@ -344,7 +344,7 @@ ENV PHP_BUILD_DIR=${BUILD_DIR}/php
 
 RUN set -xe; \
     mkdir -p ${PHP_BUILD_DIR}; \
-    curl -Ls https://downloads.php.net/~derick/php-${VERSION_PHP}.tar.gz \
+    curl -Ls https://www.php.net/distributions/php-${VERSION_PHP}.tar.gz \
     | tar xzC ${PHP_BUILD_DIR} --strip-components=1
 
 # Configure The PHP Build
@@ -394,7 +394,6 @@ RUN set -xe \
 RUN make -j $(nproc)
 
 # Override PEAR URL Since It Is Down
-
 RUN set -xe; \
     make install PEAR_INSTALLER_URL='https://github.com/pear/pearweb_phars/raw/master/install-pear-nozlib.phar'; \
     { find ${INSTALL_DIR}/bin ${INSTALL_DIR}/sbin -type f -perm +0111 -exec strip --strip-all '{}' + || true; }; \
