@@ -9,6 +9,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 // $dotenv->load();
 
 $layers = [
+    'php-73' => 'Laravel Vapor PHP 7.3',
     'php-74' => 'Laravel Vapor PHP 7.4',
 ];
 
